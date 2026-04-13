@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Health Standards{% endblock %}
+
+{% block content %}
+<div class="container margin-top">
+    <div class="header">
+        <h2>Health Standards Dashboard</h2>
+        <p>Review the ideal medical parameters before beginning your analysis.</p>
+    </div>
+
+    <!-- Dashboard layout using grid -->
+    <div class="form-grid-two-col">
+        
+        <!-- BP Card -->
+        <div class="glass-card dashboard-card">
+            <h3 style="color: var(--primary); margin-bottom: 10px;">Blood Pressure</h3>
+            <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 10px;">120/80 <span style="font-size: 1rem; color: var(--text-muted)">mm Hg</span></div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Healthy arteries allow blood to flow smoothly. Consistent readings above 130/80 may indicate hypertension.</p>
+        </div>
+
+        <!-- Cholesterol Card -->
+        <div class="glass-card dashboard-card">
+            <h3 style="color: var(--primary); margin-bottom: 10px;">Serum Cholesterol</h3>
+            <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 10px;">&lt; 200 <span style="font-size: 1rem; color: var(--text-muted)">mg/dl</span></div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Total cholesterol should remain low to prevent plaque buildup in your arteries leading to blockages.</p>
+        </div>
+
+        <!-- Blood Sugar Card -->
+        <div class="glass-card dashboard-card">
+            <h3 style="color: var(--primary); margin-bottom: 10px;">Fasting Blood Sugar</h3>
+            <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 10px;">&lt; 100 <span style="font-size: 1rem; color: var(--text-muted)">mg/dl</span></div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">High blood sugar damages blood vessels over time. Levels strictly over 120 can drastically increase risks.</p>
+        </div>
+
+        <!-- Heart Rate Card -->
+        <div class="glass-card dashboard-card">
+            <h3 style="color: var(--primary); margin-bottom: 10px;">Resting Heart Rate</h3>
+            <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 10px;">60–100 <span style="font-size: 1rem; color: var(--text-muted)">bpm</span></div>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">A lower resting heart rate generally implies more efficient heart function and better cardiovascular fitness.</p>
+        </div>
+        
+    </div>
+
+    <div class="btn-container" style="margin-top: 50px;">
+        <a href="/form" class="btn-submit btn-large" style="display:inline-block; max-width: 300px; text-decoration: none;">Start Your Analysis</a>
+    </div>
+
+</div>
+{% endblock %}

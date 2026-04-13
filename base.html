@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Heart Disease Risk Predictor{% endblock %}</title>
+    <!-- Use url_for to link css in flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    {% if user %}
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-brand">Heart Predictor</a>
+            <div class="nav-menu">
+                <span class="nav-user">Welcome, {{ user }}</span>
+                <a href="{{ url_for('logout') }}" class="btn-logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+    {% endif %}
+
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

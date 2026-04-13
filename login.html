@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Heart Predictor{% endblock %}
+
+{% block content %}
+<div class="container login-container">
+    <div class="glass-card login-card">
+        <div class="header">
+            <h1>Welcome Back</h1>
+            <p>Please enter your email or phone number to continue.</p>
+        </div>
+        
+        <form action="/login" method="POST">
+            <div class="form-group login-group">
+                <label for="contact">Email or Phone Number</label>
+                <input type="text" id="contact" name="contact" class="form-control" required placeholder="e.g. name@example.com">
+            </div>
+            <button type="submit" class="btn-submit">Secure Login</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

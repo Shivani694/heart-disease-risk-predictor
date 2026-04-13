@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container margin-top">
+        <div class="glass-card">
+            <div class="header">
+                <h2>Enter Patient Details</h2>
+                <p>Provide the medical parameters below for a secure analysis.</p>
+            </div>
+            
+            <form action="/predict" method="POST">
+                <!-- Switched to a structured two-column grid inside css -->
+                <div class="form-grid-two-col">
+                    
+                    <div class="form-group">
+                        <label for="age">Age (years)</label>
+                        <input type="number" id="age" name="age" class="form-control" required min="1" max="120" placeholder="e.g. 45">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" class="form-control" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bp">Resting Blood Pressure (mm Hg)</label>
+                        <input type="number" id="bp" name="bp" class="form-control" required min="50" max="250" placeholder="e.g. 120">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cholesterol">Serum Cholesterol (mg/dl)</label>
+                        <input type="number" id="cholesterol" name="cholesterol" class="form-control" required min="50" max="600" placeholder="e.g. 200">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bs">Fasting Blood Sugar > 120 mg/dl?</label>
+                        <select id="bs" name="bs" class="form-control" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hr">Maximum Heart Rate Achieved</label>
+                        <input type="number" id="hr" name="hr" class="form-control" required min="40" max="220" placeholder="e.g. 150">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cp">Chest Pain Type</label>
+                        <select id="cp" name="cp" class="form-control" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="0">Typical Angina</option>
+                            <option value="1">Atypical Angina</option>
+                            <option value="2">Non-anginal Pain</option>
+                            <option value="3">Asymptomatic</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="angina">Exercise Induced Angina?</label>
+                        <select id="angina" name="angina" class="form-control" required>
+                            <option value="" disabled selected>Select option</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="btn-container">
+                    <button type="submit" class="btn-submit btn-large">Predict Risk</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
